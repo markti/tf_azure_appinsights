@@ -6,8 +6,11 @@ resource "azurerm_application_insights" "main" {
   resource_group_name = var.resource_group_name
   application_type    = "web"
 
+  retention_in_days   = var.retention_days
+
   tags = {
     app = var.app_name
     env = var.env_name
   }
+  
 }
